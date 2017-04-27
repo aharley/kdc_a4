@@ -1,13 +1,12 @@
-%states = importdata('markers');
+states = importdata('../part0/markers');
 %states = importdata('../part0/markersn');
 %states = importdata('../part1/p1n00');
 %states = importdata('../part1/p1n01');
-states = importdata('../part1/p1n09');
+%states = importdata('../part1/p1n09');
 
 nFrames = size(states,1);
 nMarkers = size(states,2)/3;
 
-% i want to do a bit of beautifying using all of the xyz data
 [x,y,z] = parse_xyz(states);
 
 subsamp = 10;

@@ -1,9 +1,14 @@
-function [] = plotState(state)
+function [] = plotState(state,c)
+if ~exist('c','var')
+    % default to magenta
+    c = 'm';
+end
+
 % the state is a 1 x 3*nMarkers vector
 nMarkers = size(state,2)/3;
 % it has the xyz position of every marker
 [x,y,z] = parse_xyz(state);
-plot3(x,y,z,'m*','linewidth',2);
+plot3(x,y,z,[c '*'],'linewidth',2);
 
 % here's a slower version of the same
     %for m=1:nMarkers
